@@ -35,6 +35,9 @@ impl ApiConfig {
     fn new() -> Self {
         ApiConfig::default()
     }
+    pub fn base_api_url(&self) -> &str {
+        &self.base_api_url
+    }
 }
 
 #[cfg(test)]
