@@ -4,7 +4,7 @@ use reqwest::{Client, Response};
 use super::api_config::ApiConfig;
 
 #[derive(Debug)]
-struct ApiClient {
+pub struct ApiClient {
     api_config: ApiConfig,
     client: Client,
 }
