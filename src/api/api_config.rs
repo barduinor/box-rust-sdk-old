@@ -33,14 +33,20 @@ impl Default for ApiConfig {
 }
 
 impl ApiConfig {
-    fn new() -> Self {
+    pub fn new() -> Self {
         ApiConfig::default()
     }
     pub fn base_api_url(&self) -> String {
         format!("{}/{}", self.base_api_url, self.api_version)
     }
+    pub fn set_base_api_url(&mut self, base_api_url: String) {
+        self.base_api_url = base_api_url;
+    }
     pub fn upload_url(&self) -> String {
         format!("{}/{}", self.upload_url, self.api_version)
+    }
+    pub fn set_upload_url(&mut self, upload_url: String) {
+        self.upload_url = upload_url;
     }
     pub fn oauth2_api_url(&self) -> String {
         self.oauth2_api_url.clone()
